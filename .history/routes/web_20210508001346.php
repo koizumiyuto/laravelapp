@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Auth\AuthController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -36,6 +36,6 @@ h1 { font-size: 100pt; text-align:right; color: #eee;
 </html>
 EOF;
 
-Route::get('/',[AuthController::class,'showLogin'])->name('showLogin');
-
-Route::post('login',[AuthController::class, 'login'])->name('login');
+Route::get('hello',function () use ($html) {
+    return $html;
+});
